@@ -258,8 +258,8 @@ function movePlayers(checkFun, respawnPoint, useRespawn, respawnTeams, sideX, si
 			continue;
 
 		room.setPlayerDiscProperties(player.id, {
-			x: discProps.x * !useRespawn.x + respawnPoint.x * useRespawn.x * sideX - PLAYER_RADIUS * 2 * useRespawn.x,
-			y: discProps.y * !useRespawn.y + respawnPoint.y * useRespawn.y * sideY - PLAYER_RADIUS * 2 * useRespawn.y,
+			x: discProps.x * !useRespawn.x + (respawnPoint.x - PLAYER_RADIUS) * useRespawn.x * sideX,
+			y: discProps.y * !useRespawn.y + (respawnPoint.y - PLAYER_RADIUS) * useRespawn.y * sideY,
 			xspeed: 0,
 			yspeed: 0
 		});
